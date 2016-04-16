@@ -10,6 +10,8 @@ var categories = require('./routes/categories');
 var questions = require('./routes/questions');
 var articles = require('./routes/articles');
 
+var myFirebaseRef = new Firebase("https://blistering-fire-8873.firebaseio.com/");
+
 var app = express();
 
 // view engine setup

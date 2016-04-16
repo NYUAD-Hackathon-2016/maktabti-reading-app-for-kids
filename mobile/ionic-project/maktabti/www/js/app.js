@@ -77,7 +77,21 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         controller: 'AccountCtrl'
       }
     }
-  });
+  })
+  
+  
+  //____________________My state_____________Lamia_______
+
+
+  .state('tab.stats', {
+      url: '/stats',
+      views: {
+        'tab-stats': {
+           templateUrl: 'templates/tab-stats.html',
+           controller: 'StatsCtrl'
+        }
+      }
+    });
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/dash');

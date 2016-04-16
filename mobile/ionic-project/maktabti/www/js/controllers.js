@@ -1,6 +1,28 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {})
+.controller('DashCtrl', function($scope, Stories) {
+  var currentStory = 0;
+  var stories = Stories.all();
+  $scope.story = stories[currentStory];
+  ;
+
+  $scope.nextStory = function() {
+
+    currentStory++;
+    if (currentStory >= stories.length){
+        currentStory--;
+    }
+    $scope.story = stories[currentStory];
+  };
+
+  $scope.previousStory = function() {
+    currentStory--;
+    if (currentStory == -1){
+        currentStory++;
+    }
+    $scope.story = stories[currentStory];
+  };
+})
 
 .controller('ChatsCtrl', function($scope, Chats) {
   // With the new view caching in Ionic, Controllers are only called
@@ -17,6 +39,19 @@ angular.module('starter.controllers', [])
   };
 })
 
+.controller('RequestCtrl', function($scope, $http) {
+ 
+    $scope.getArticle = function(id) {
+        $http.get("http://localhost/api/articles", { params: { "id": id} })
+            .success(function(data) {
+                $scope.article = data.article;
+            })
+            .error(function(data) {
+                alert("ERROR");
+            });
+    }
+})
+
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
   $scope.chat = Chats.get($stateParams.chatId);
 })
@@ -24,7 +59,7 @@ angular.module('starter.controllers', [])
 .controller('AccountCtrl', function($scope) {
   $scope.quiz = {
     answers: ['Rome','London', 'Paris'],
-    correct: 'answer2',
+    correct: 'Rome',
     question: 'Where did this story take place?'
   }
   $scope.settings = {
@@ -41,3 +76,14 @@ angular.module('starter.controllers', [])
   };
 }
 )
+
+
+.controller('StatsCtrl', function($scope) {
+  $scope.numberReadBooks = 10;
+})
+
+
+ // $scope.createTask = function(radio_value) {
+   // console.log("Submitting");
+//window.alert("Submitting text");
+  //};

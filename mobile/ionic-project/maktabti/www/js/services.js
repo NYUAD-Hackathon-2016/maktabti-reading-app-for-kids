@@ -6,6 +6,49 @@ angular.module('starter.services', [])
   // Some fake testing data
   var chats = [{
     id: 0,
+    name: 'Art',
+    face: 'img/paint.png',
+    color: '#CE40AB'
+  }, {
+    id: 1,
+    name: 'Science',
+    face: 'img/science.png',
+    color: '#FFB24F'
+  }, {
+    id: 2,
+    name: 'Sports',
+    face: 'img/summer.png',
+    color: '#4289BC'
+  }, {
+    id: 3,
+    name: 'Animals',
+    face: 'img/animals.png',
+    color: '#CCF64C'
+  }];
+
+  return {
+    all: function() {
+      return chats;
+    },
+    remove: function(chat) {
+      chats.splice(chats.indexOf(chat), 1);
+    },
+    get: function(chatId) {
+      for (var i = 0; i < chats.length; i++) {
+        if (chats[i].id === parseInt(chatId)) {
+          return chats[i];
+        }
+      }
+      return null;
+    }
+  };
+})
+
+
+.factory('Stories', function() {
+
+  var stories = [{
+    id: 0,
     name: 'Ben Sparrow',
     lastText: 'You on your way?',
     face: 'img/ben.png'
@@ -31,20 +74,20 @@ angular.module('starter.services', [])
     face: 'img/mike.png'
   }];
 
-  return {
+return {
     all: function() {
-      return chats;
+      return stories;
     },
-    remove: function(chat) {
-      chats.splice(chats.indexOf(chat), 1);
-    },
-    get: function(chatId) {
-      for (var i = 0; i < chats.length; i++) {
-        if (chats[i].id === parseInt(chatId)) {
-          return chats[i];
+    get: function(storyId) {
+      for (var i = 0; i < stories.length; i++) {
+        if (stories[i].id === parseInt(storyId)) {
+          return stories[i];
         }
       }
       return null;
     }
   };
-});
+
+  })
+
+;
