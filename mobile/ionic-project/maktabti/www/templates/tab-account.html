@@ -1,16 +1,15 @@
-<ion-view view-title="Page 1">
+<ion-view view-title={{quiz.question}}>
   <ion-content>
-
+<!--
 <label class="item item-input">
   <span class="input-label"><strong>{{quiz.question}}</strong></span>
   <input type="text">
-</label>
+</label>-->
   
 <ion-radio ng-repeat="question in quiz.answers" ng-model="settings.answer" ng-value="question">
   {{question}}
   <img ng-src="http://bing.com/th?q={{question}}"/>
 </ion-radio>
-
 <br />
 
 <br />

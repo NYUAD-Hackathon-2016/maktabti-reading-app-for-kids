@@ -1,10 +1,12 @@
+var story;
+
 angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope, $http) {
   var currentStory = 1;
   // var stories = Stories.all();
   
-  var story = getStory(currentStory);
+  getStory();
  
   function getStory() {
       var jsonStory = getJsonStory()
@@ -19,7 +21,10 @@ angular.module('starter.controllers', [])
                 console.log("success");
                 console.log(currentStory);
                 console.log(data.background);
-                $scope.story = data
+                $scope.story = data;
+                  $scope.quiz = data.question.data;
+                  story = data;
+                console.log($scope.quiz.question);
                 return data;
             })
             .error(function(data) {
@@ -35,7 +40,6 @@ angular.module('starter.controllers', [])
     //     currentStory--;
     // }
     var story = getStory(currentStory);
-    $scope.story = story;
   };
 
   $scope.previousStory = function() {
@@ -44,7 +48,6 @@ angular.module('starter.controllers', [])
     //     currentStory++;
     // }
     var story = getStory(currentStory);
-    $scope.story = story;
   };
 })
 
@@ -85,11 +88,14 @@ angular.module('starter.controllers', [])
 })
 
 .controller('AccountCtrl', function($scope) {
-  $scope.quiz = {
-    answers: ['Rome','London', 'Paris'],
-    correct: 'Rome',
-    question: 'Where did this story take place?'
-  }
+  //   {
+  //   answers: ['Rome','London', 'Paris'],
+  //   correct: 'Rome',
+  //   question: 'Where did this story take place?'
+  // }
+ $scope.quiz = story.question.data;
+ console.log(story.question);
+  
   $scope.settings = {
     answer: '',
     enableFriends: true
