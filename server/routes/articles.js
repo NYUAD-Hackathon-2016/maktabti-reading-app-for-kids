@@ -18,17 +18,28 @@ router.get('/', function(req, res, next) {
               {
                   type : 'image',
                   data:'http://bing.com/th?q=hummingbird'
-              }
-              ,
+              },   
               {
                   type:'text',
-                  data:""
-              }
-              ,
+                  data:"Most hummingbirds are about three to\
+                        five inches long. But the bee hummingbird is\
+                        only five centimeters, or approximately two\
+                        inches, making it the smallest species of bird\
+                        alive today. "
+              },
               {
                   type:'text',
-                  data : ""
+                  data : "Really it isn’t bigger than a large\
+                          insect. But don’t let its tiny body fool you. This\
+                          bird is a fierce flier. It can beat its wings up to 80 times per second. If you ever see one in flight,\
+                          you’ll notice its wings are just a blur to the human eye."
                  
+              },
+              {
+                  type: 'text',
+                  data: "Hummingbirds are also the only\
+                        vertebrates that can hover in one place. Add to that being able to fly backwards and upside\
+                        down, and these creatures are amazing flying machines."
               }
            
               

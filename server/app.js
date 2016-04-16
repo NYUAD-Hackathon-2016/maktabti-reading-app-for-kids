@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require ('mongoose');
 
 var routes = require('./routes/index');
 var categories = require('./routes/categories');
@@ -11,6 +12,15 @@ var questions = require('./routes/questions');
 var articles = require('./routes/articles');
 
 var app = express();
+
+// Initilaze the DB
+var db = mongoose.connect('mongodb://localhost/maktabti').connection;
+db.on('error', function(error){
+  console.error("Error db not connected");
+})
+db.once('open',function(){
+  console.log("Connected");
+})
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
