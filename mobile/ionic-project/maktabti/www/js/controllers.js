@@ -1,26 +1,50 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope, Stories) {
-  var currentStory = 0;
-  var stories = Stories.all();
-  $scope.story = stories[currentStory];
-  ;
+.controller('DashCtrl', function($scope, $http) {
+  var currentStory = 1;
+  // var stories = Stories.all();
+  
+  var story = getStory(currentStory);
+ 
+  function getStory() {
+      var jsonStory = getJsonStory()
+      return jsonStory;
+  }
 
-  $scope.nextStory = function() {
-
-    currentStory++;
-    if (currentStory >= stories.length){
-        currentStory--;
+   function getJsonStory() {
+      console.log("requesting article");
+      // alert("requesting");
+        $http.get("http://localhost:3000/api/articles", { params: { "id": currentStory} })
+            .success(function(data) {
+                console.log("success");
+                console.log(currentStory);
+                console.log(data.background);
+                $scope.story = data
+                return data;
+            })
+            .error(function(data) {
+              console.log("error");
+                alert("ERROR")
+                return null;
+            });
     }
-    $scope.story = stories[currentStory];
+    
+    $scope.nextStory = function() {
+    currentStory++;
+    // if (currentStory >= stories.length){
+    //     currentStory--;
+    // }
+    var story = getStory(currentStory);
+    $scope.story = story;
   };
 
   $scope.previousStory = function() {
     currentStory--;
-    if (currentStory == -1){
-        currentStory++;
-    }
-    $scope.story = stories[currentStory];
+    // if (currentStory == -1){
+    //     currentStory++;
+    // }
+    var story = getStory(currentStory);
+    $scope.story = story;
   };
 })
 
@@ -40,13 +64,17 @@ angular.module('starter.controllers', [])
 })
 
 .controller('RequestCtrl', function($scope, $http) {
- 
-    $scope.getArticle = function(id) {
-        $http.get("http://localhost/api/articles", { params: { "id": id} })
+    $scope.getArticle = function() {
+      console.log("requesting article");
+      alert("requesting");
+        $http.get("http://localhost/api/articles", { params: { "id": 1} })
             .success(function(data) {
+              alert("working")
+                console.log("success");
                 $scope.article = data.article;
             })
             .error(function(data) {
+              console.log("error");
                 alert("ERROR");
             });
     }
