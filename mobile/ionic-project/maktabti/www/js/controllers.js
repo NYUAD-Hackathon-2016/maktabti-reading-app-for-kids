@@ -1,6 +1,28 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {})
+.controller('DashCtrl', function($scope, Stories) {
+  var currentStory = 0;
+  var stories = Stories.all();
+  $scope.story = stories[currentStory];
+  ;
+
+  $scope.nextStory = function() {
+
+    currentStory++;
+    if (currentStory >= stories.length){
+        currentStory--;
+    }
+    $scope.story = stories[currentStory];
+  };
+
+  $scope.previousStory = function() {
+    currentStory--;
+    if (currentStory == -1){
+        currentStory++;
+    }
+    $scope.story = stories[currentStory];
+  };
+})
 
 .controller('ChatsCtrl', function($scope, Chats) {
   // With the new view caching in Ionic, Controllers are only called
