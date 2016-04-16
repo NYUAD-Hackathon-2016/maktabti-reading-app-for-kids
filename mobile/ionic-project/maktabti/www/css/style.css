@@ -1,1 +1,21 @@
 /* Empty. Add your own CSS if you like */
+#tab-stats-div-1
+{
+    padding-left: 120px;
+    color: #387ef5;
+}
+
+#tab-stats-div-2
+{
+    padding-top: 30px;
+    padding-left: 120px;
+    color: #387ef5;
+    font-size: 700%;
+}
+
+#tab-stats-div-3
+{
+    padding-left: 150px;
+    padding-top: 30px;
+    color: #387ef5;
+}

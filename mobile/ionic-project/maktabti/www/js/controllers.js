@@ -25,4 +25,12 @@ angular.module('starter.controllers', [])
   $scope.settings = {
     enableFriends: true
   };
-});
+})
+
+
+//____________________My controller_____________Lamia_______
+.controller('StatsCtrl', function($scope) {
+  $scope.numberReadBooks = 10;
+})
+
+;
