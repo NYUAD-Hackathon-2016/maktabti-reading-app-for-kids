@@ -52,3 +52,8 @@
     position: absolute;
     padding: 10px 10px 10px 100px;
 }
+img {
+    display: block;
+    height: 50px;
+    width: 50px;
+}

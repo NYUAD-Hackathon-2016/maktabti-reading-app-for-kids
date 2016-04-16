@@ -85,21 +85,33 @@ angular.module('starter.controllers', [])
 })
 
 .controller('AccountCtrl', function($scope) {
+  $scope.quiz = {
+    answers: ['Rome','London', 'Paris'],
+    correct: 'Rome',
+    question: 'Where did this story take place?'
+  }
   $scope.settings = {
+    answer: '',
     enableFriends: true
   };
-})
+  $scope.createTask = function() {
+    if($scope.settings.answer == $scope.quiz.correct) {
+      window.alert("TRUE!");
+    }
+    else {
+      window.alert("FALSE!");
+    }
+  };
+}
+)
 
 
-//____________________My controller_____________Lamia_______
 .controller('StatsCtrl', function($scope) {
   $scope.numberReadBooks = 10;
 })
 
 
-  $scope.createTask = function(radio_value) {
-    console.log("Submitting");
-window.alert("Submitting text");
-  };
-
-
+ // $scope.createTask = function(radio_value) {
+   // console.log("Submitting");
+//window.alert("Submitting text");
+  //};
