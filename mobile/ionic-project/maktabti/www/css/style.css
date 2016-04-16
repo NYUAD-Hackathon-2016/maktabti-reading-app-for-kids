@@ -1,4 +1,5 @@
 /* Empty. Add your own CSS if you like */
+
 .item-content{
     background-color: transparent !important;
     margin-left: auto;
@@ -20,5 +21,14 @@
     height: 100px;
 }
 
-
-
+/*.button-assertive {
+    display: inline-block;
+    align: border: width border-style color;
+}*/
+.wrapper {
+    text-align: center;
+}
+.button button-assertive {
+    position: absolute;
+    padding: 10px 10px 10px 100px;
+}
