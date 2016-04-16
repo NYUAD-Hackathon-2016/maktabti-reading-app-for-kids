@@ -45,11 +45,7 @@ router.get('/', function (req, res, next) {
 
 
             ],
-            categories: {
-                id: 1,
-                title: 'Sports',
-                thumbnail: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQb4sxM2QW5rdHwIAeny0HCHDBwjtgoLIiYJ20fJOxi3FSoEtlhaA'
-            }
+            categories: ['animals']
 
         },
         {
@@ -72,16 +68,9 @@ router.get('/', function (req, res, next) {
                 {
                     type: 'text',
                     data: "أثناء تجوالها في أحد البساتين رأت بعض الفاكهة، فوصل طَمَعُها برغبتها أن تصير فاكهةً لذيدةً برائحةٍ طيبةٍ، فوضعت بعض قشور الفاكهة على رأسها، واستغرقت من تعبها في نومٍ عميقٍ، وفجأة شعرت كأن أحداً ما يُحرّكها من مكانها، نظرت نحو الأعلى، فرأت خرفاناً من حولها تفتح فاها محاولةً أكلها ظانّةً إياها نوعاً لذيذاً من الفاكهة، وما إن أدركت القطة هذا حتى خلعت القناع وفرّت هاربة مذعورة وهي تقول: أنا محظوظة لأنّي قطةٌ أستطيع الهرب بسرعة ولم أكن فاكهةً أو أيَّ شيء آخر، ثم عادت إلى بيتها وهي مسرورة."
-
                 },
-
             ],
-            categories: {
-                id: 1,
-                title: 'Sports',
-                thumbnail: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQb4sxM2QW5rdHwIAeny0HCHDBwjtgoLIiYJ20fJOxi3FSoEtlhaA'
-            }
-
+            categories: ['']
         },
         ]
     });
