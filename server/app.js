@@ -1,3 +1,4 @@
+var fs = require ('fs');
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -5,13 +6,20 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require ('mongoose');
-
+var models = path.join(__dirname,'models');
 var routes = require('./routes/index');
 var categories = require('./routes/categories');
 var questions = require('./routes/questions');
 var articles = require('./routes/articles');
 
 var app = express();
+
+fs.readdirSync(models).filter(function(file) {
+  return file.lastIndexOf('.js') != -1
+}).forEach(function(file) {
+  console.log('Loading Model ' + file)
+  require(path.join(models, file))
+})
 
 // Initilaze the DB
 var db = mongoose.connect('mongodb://localhost/maktabti').connection;
