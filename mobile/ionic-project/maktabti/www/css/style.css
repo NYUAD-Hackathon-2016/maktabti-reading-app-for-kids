@@ -1,4 +1,5 @@
 /* Empty. Add your own CSS if you like */
+
 #tab-stats-div-1
 {
     padding-left: 120px;
@@ -18,4 +19,36 @@
     padding-left: 150px;
     padding-top: 30px;
     color: #387ef5;
+}
+.item-content{
+    background-color: transparent !important;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+}
+
+.button-categ {
+    width: 45%;
+    height: 150px;
+    margin: 2%;
+    
+}
+
+.categimg{
+    width: 100px;
+    height: 100px;
+}
+
+/*.button-assertive {
+    display: inline-block;
+    align: border: width border-style color;
+}*/
+.wrapper {
+    text-align: center;
+}
+.button button-assertive {
+    position: absolute;
+    padding: 10px 10px 10px 100px;
 }
