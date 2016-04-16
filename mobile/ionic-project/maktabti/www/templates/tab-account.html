@@ -2,19 +2,22 @@
   <ion-content>
 
 <label class="item item-input">
-  <span class="input-label">What happened next?</span>
+  <span class="input-label"><strong>{{quiz.question}}</strong></span>
   <input type="text">
 </label>
   
-<ion-radio ng-model="choice" ng-value="'A'">Answer A</ion-radio>
-<ion-radio ng-model="choice" ng-value="'B'">Answer B</ion-radio>
-<ion-radio ng-model="choice" ng-value="'C'">Answer C</ion-radio>
+<ion-radio ng-repeat="question in quiz.answers" ng-model="settings.answer" ng-value="question">
+  {{question}}
+  <img ng-src="http://bing.com/th?q={{question}}"/>
+</ion-radio>
+
+<br />
 
 <br />
 <div class="wrapper">
 
 
-<form ng-submit="createTask(choice)">
+<form ng-submit="createTask()">
         <div class="padding">
           <button type="submit" class="button button-assertive">Submit</button>
         </div>
