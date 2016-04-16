@@ -42,11 +42,8 @@ router.get('/', function (req, res, next) {
                         vertebrates that can hover in one place. Add to that being able to fly backwards and upside\
                         down, and these creatures are amazing flying machines."
                 }
-
-
             ],
             categories: ['animals']
-
         },
         {
             id: 2,
@@ -70,7 +67,31 @@ router.get('/', function (req, res, next) {
                     data: "أثناء تجوالها في أحد البساتين رأت بعض الفاكهة، فوصل طَمَعُها برغبتها أن تصير فاكهةً لذيدةً برائحةٍ طيبةٍ، فوضعت بعض قشور الفاكهة على رأسها، واستغرقت من تعبها في نومٍ عميقٍ، وفجأة شعرت كأن أحداً ما يُحرّكها من مكانها، نظرت نحو الأعلى، فرأت خرفاناً من حولها تفتح فاها محاولةً أكلها ظانّةً إياها نوعاً لذيذاً من الفاكهة، وما إن أدركت القطة هذا حتى خلعت القناع وفرّت هاربة مذعورة وهي تقول: أنا محظوظة لأنّي قطةٌ أستطيع الهرب بسرعة ولم أكن فاكهةً أو أيَّ شيء آخر، ثم عادت إلى بيتها وهي مسرورة."
                 },
             ],
-            categories: ['']
+            categories: ['animals']
+        },
+        {
+            id: 2,
+            title: 'قصة القطة المتحيرة',
+            thumbnail: 'http://cdn.lifedaily.com/wp-content/uploads/2015/08/cat-620x413.jpg',
+            content: [
+                {
+                    type: 'text',
+                    data: ""
+                },
+                {
+                    type: 'image',
+                    data: ''
+                },
+                {
+                    type: 'text',
+                    data: ""
+                },
+                {
+                    type: 'text',
+                    data: ""
+                },
+            ],
+            categories: ['science']
         },
         ]
     });
