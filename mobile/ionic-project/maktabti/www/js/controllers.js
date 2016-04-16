@@ -39,7 +39,7 @@ angular.module('starter.controllers', [])
     // if (currentStory >= stories.length){
     //     currentStory--;
     // }
-    var story = getStory(currentStory);
+    var story = getStory();
   };
 
   $scope.previousStory = function() {
@@ -47,7 +47,7 @@ angular.module('starter.controllers', [])
     // if (currentStory == -1){
     //     currentStory++;
     // }
-    var story = getStory(currentStory);
+    var story = getStory();
   };
 })
 
@@ -111,10 +111,21 @@ angular.module('starter.controllers', [])
 }
 )
 
+.controller('MainCtrl', function($scope, $sce) {
+  $scope.trustSrc = function(src) {
+    return $sce.trustAsResourceUrl(src);
+  }
+})
 
 .controller('StatsCtrl', function($scope) {
   $scope.numberReadBooks = 10;
 })
+
+.controller('ReadingCtrl', function($scope) {
+  // populate a new variable with the content for this story?
+  $scope.story = story;
+  console.log($scope.story);
+});
 
 
  // $scope.createTask = function(radio_value) {

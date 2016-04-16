@@ -5,16 +5,15 @@
   <span class="input-label"><strong>{{quiz.question}}</strong></span>
   <input type="text">
 </label>-->
-  
+ 
 <ion-radio ng-repeat="question in quiz.answers" ng-model="settings.answer" ng-value="question">
   {{question}}
-  <img ng-src="http://bing.com/th?q={{question}}"/>
+  <img class="ans" ng-src="http://bing.com/th?q={{question}}"/>
 </ion-radio>
 <br />
 
 <br />
 <div class="wrapper">
-
 
 <form ng-submit="createTask()">
         <div class="padding">

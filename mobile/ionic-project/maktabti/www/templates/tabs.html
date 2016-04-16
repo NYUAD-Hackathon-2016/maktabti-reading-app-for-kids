@@ -5,17 +5,18 @@ navigation history that also transitions its views in and out.
 -->
 <ion-tabs class="tabs-icon-top tabs-color-active-positive">
 
-  <!-- Dashboard Tab -->
-  <ion-tab title="Status" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/tab/dash">
-    <ion-nav-view name="tab-dash"></ion-nav-view>
-  </ion-tab>
 
-  <!-- Chats Tab -->
+  <!-- Chats (categories) Tab -->
   <ion-tab title="Chats" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" href="#/tab/chats">
     <ion-nav-view name="tab-chats"></ion-nav-view>
   </ion-tab>
 
-  <!-- Account Tab -->
+  <!-- Dashboard (books) Tab -->
+  <ion-tab title="Status" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/tab/dash">
+    <ion-nav-view name="tab-dash"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Account (quiz) Tab -->
   <ion-tab title="Account" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/account">
     <ion-nav-view name="tab-account"></ion-nav-view>
   </ion-tab>
@@ -23,6 +24,11 @@ navigation history that also transitions its views in and out.
   <!-- Stats Tab -->
   <ion-tab title="Stats" icon-off="ion-ios-pie-outline" icon-on="ion-ios-pie" href="#/tab/stats">
     <ion-nav-view name="tab-stats"></ion-nav-view>
+  </ion-tab>
+  
+   <!-- Stats Tab -->
+  <ion-tab title="Reading" icon-off="ion-ios-pie-outline" icon-on="ion-ios-pie" href="#/tab/reading">
+    <ion-nav-view name="tab-reading"></ion-nav-view>
   </ion-tab>
   
 </ion-tabs>
