@@ -25,4 +25,8 @@ angular.module('starter.controllers', [])
   $scope.settings = {
     enableFriends: true
   };
+  $scope.createTask = function(radio_value) {
+    console.log("Submitting");
+window.alert("Submitting text");
+  };
 });
