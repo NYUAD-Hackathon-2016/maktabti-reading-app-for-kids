@@ -39,6 +39,19 @@ angular.module('starter.controllers', [])
   };
 })
 
+.controller('RequestCtrl', function($scope, $http) {
+ 
+    $scope.getArticle = function(id) {
+        $http.get("http://localhost/api/articles", { params: { "id": id} })
+            .success(function(data) {
+                $scope.article = data.article;
+            })
+            .error(function(data) {
+                alert("ERROR");
+            });
+    }
+})
+
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
   $scope.chat = Chats.get($stateParams.chatId);
 })
@@ -47,4 +60,10 @@ angular.module('starter.controllers', [])
   $scope.settings = {
     enableFriends: true
   };
+  $scope.createTask = function(radio_value) {
+    console.log("Submitting");
+window.alert("Submitting text");
+  };
 });
+
+

@@ -1,9 +1,25 @@
-<ion-view view-title="Account">
+<ion-view view-title="Page 1">
   <ion-content>
-    <ion-list>
-    <ion-toggle  ng-model="settings.enableFriends">
-        Enable Friends
-    </ion-toggle>
-    </ion-list>
-  </ion-content>
+
+<label class="item item-input">
+  <span class="input-label">What happened next?</span>
+  <input type="text">
+</label>
+  
+<ion-radio ng-model="choice" ng-value="'A'">Answer A</ion-radio>
+<ion-radio ng-model="choice" ng-value="'B'">Answer B</ion-radio>
+<ion-radio ng-model="choice" ng-value="'C'">Answer C</ion-radio>
+
+<br />
+<div class="wrapper">
+
+
+<form ng-submit="createTask(choice)">
+        <div class="padding">
+          <button type="submit" class="button button-assertive">Submit</button>
+        </div>
+      </form>
+</div>
+</ion-content>
 </ion-view>
+    
