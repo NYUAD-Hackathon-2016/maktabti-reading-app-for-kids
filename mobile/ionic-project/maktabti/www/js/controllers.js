@@ -1,53 +1,26 @@
-var story;
-
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope, $http) {
-  var currentStory = 1;
-  // var stories = Stories.all();
-  
-  getStory();
- 
-  function getStory() {
-      var jsonStory = getJsonStory()
-      return jsonStory;
-  }
+.controller('DashCtrl', function($scope, Stories) {
+  var currentStory = 0;
+  var stories = Stories.all();
+  $scope.story = stories[currentStory];
+  ;
 
-   function getJsonStory() {
-      console.log("requesting article");
-      // alert("requesting");
-        $http.get("http://localhost:3000/api/articles", { params: { "id": currentStory} })
-            .success(function(data) {
-                console.log("success");
-                console.log(currentStory);
-                console.log(data.background);
-                $scope.story = data;
-                  $scope.quiz = data.question.data;
-                  story = data;
-                console.log($scope.quiz.question);
-                return data;
-            })
-            .error(function(data) {
-              console.log("error");
-                alert("ERROR")
-                return null;
-            });
-    }
-    
-    $scope.nextStory = function() {
+  $scope.nextStory = function() {
+
     currentStory++;
-    // if (currentStory >= stories.length){
-    //     currentStory--;
-    // }
-    var story = getStory();
+    if (currentStory >= stories.length){
+        currentStory--;
+    }
+    $scope.story = stories[currentStory];
   };
 
   $scope.previousStory = function() {
     currentStory--;
-    // if (currentStory == -1){
-    //     currentStory++;
-    // }
-    var story = getStory();
+    if (currentStory == -1){
+        currentStory++;
+    }
+    $scope.story = stories[currentStory];
   };
 })
 
@@ -67,17 +40,13 @@ angular.module('starter.controllers', [])
 })
 
 .controller('RequestCtrl', function($scope, $http) {
-    $scope.getArticle = function() {
-      console.log("requesting article");
-      alert("requesting");
-        $http.get("http://localhost/api/articles", { params: { "id": 1} })
+
+    $scope.getArticle = function(id) {
+        $http.get("http://localhost/api/articles", { params: { "id": id} })
             .success(function(data) {
-              alert("working")
-                console.log("success");
                 $scope.article = data.article;
             })
             .error(function(data) {
-              console.log("error");
                 alert("ERROR");
             });
     }
@@ -88,14 +57,11 @@ angular.module('starter.controllers', [])
 })
 
 .controller('AccountCtrl', function($scope) {
-  //   {
-  //   answers: ['Rome','London', 'Paris'],
-  //   correct: 'Rome',
-  //   question: 'Where did this story take place?'
-  // }
- $scope.quiz = story.question.data;
- console.log(story.question);
-  
+  $scope.quiz = {
+    answers: ['Rome','London', 'Paris'],
+    correct: 'Rome',
+    question: 'Where did this story take place?'
+  }
   $scope.settings = {
     answer: '',
     enableFriends: true
@@ -111,21 +77,10 @@ angular.module('starter.controllers', [])
 }
 )
 
-.controller('MainCtrl', function($scope, $sce) {
-  $scope.trustSrc = function(src) {
-    return $sce.trustAsResourceUrl(src);
-  }
-})
 
 .controller('StatsCtrl', function($scope) {
   $scope.numberReadBooks = 10;
 })
-
-.controller('ReadingCtrl', function($scope) {
-  // populate a new variable with the content for this story?
-  $scope.story = story;
-  console.log($scope.story);
-});
 
 
  // $scope.createTask = function(radio_value) {
