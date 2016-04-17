@@ -42,6 +42,7 @@ salkendi
 
 Hacker 7:
 Nadine Handal
+Birzeit
 Palestine
 Nadine-H
 nadine.handal@gmail.com
