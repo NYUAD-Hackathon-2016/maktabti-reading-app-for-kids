@@ -1,11 +1,12 @@
 var story;
 
-var numStories = 3;
+var firstStory = 2;
+var lastStory = 7;
 
 angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope, $http) {
-  var currentStory = 1;
+  var currentStory = firstStory;
   // var stories = Stories.all();
   
   getStory();
@@ -40,16 +41,16 @@ angular.module('starter.controllers', [])
     
     $scope.nextStory = function() {
     currentStory++;
-    if (currentStory > numStories) {
-        currentStory = 1;
+    if (currentStory > lastStory) {
+        currentStory = firstStory;
     }
     var story = getStory();
   };
 
   $scope.previousStory = function() {
     currentStory--;
-    if (currentStory == -1){
-        currentStory = numStories;
+    if (currentStory < firstStory){
+        currentStory = lastStory;
     }
     var story = getStory();
   };
