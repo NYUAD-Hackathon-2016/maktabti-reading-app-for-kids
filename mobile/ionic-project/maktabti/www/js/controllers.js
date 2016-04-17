@@ -22,8 +22,10 @@ angular.module('starter.controllers', [])
                 console.log(currentStory);
                 console.log(data.background);
                 $scope.story = data;
+                if (data.question) {
                   $scope.quiz = data.question.data;
-                  story = data;
+                }
+                story = data;
                 console.log($scope.quiz.question);
                 return data;
             })

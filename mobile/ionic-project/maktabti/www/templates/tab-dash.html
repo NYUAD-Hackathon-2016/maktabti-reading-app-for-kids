@@ -1,4 +1,4 @@
-<ion-view view-title="Stories">
+<ion-view view-title="{{story.title}}">
    
                 <!-- right and left buttons -->
 
@@ -14,6 +14,11 @@
                 </button>
             </ion-nav-buttons>
 
+
+            <style>
+
+</style>
+
   <ion-content>
   <!--
       <ion-list>
@@ -26,9 +31,13 @@
      </ion-item>
    </ion-list>
    -->   
-          <img ng-src="{{story.background}}">
-              <h2><center>{{story.title}}</center></h2>
-              <p>{{story.lastText}}</p>
+         <!-- <img ng-src="{{story.background}}">-->
+         <div class="storyImage" back-img="{{story.background}}" ng-scope="story" > </div>
+         <p>HELLO</p><p>HELLO</p><p>HELLO</p><p>HELLO</p><p>HELLO</p><p>HELLO</p><p>HELLO</p><p>HELLO</p><p>HELLO</p>
+         <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+        <h2><center>{{story.title}}</center></h2>
+        <p>{{story.lastText}}</p>
 
   </ion-content>
   
