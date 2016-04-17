@@ -62,4 +62,7 @@
     display: block;
     height: 50%;
     width: 50%;
+
+.has-header {
+    top: 0;
 }
