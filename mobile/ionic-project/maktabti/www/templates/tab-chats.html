@@ -1,12 +1,12 @@
-<ion-view view-title="Category">
+<ion-view view-title="Category" class="grad-bg">
   <ion-content>
   
-  <h3>What do you like?</h3>  
+  <h3 style="text-align: center; font-size: 40px;">ماذا تحب؟</h3>  
   
     <ion-list class="centerstuff">
       <ion-item class="button-categ button" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/dash" style="background-color:{{chat.color}}">
-        <h2>{{chat.name}}</h2>
         <img class="categimg" src="{{chat.face}}"/>
+        <p style="color: black; font-size: 25px;">{{chat.name}}</p>  
       </ion-item>
     </ion-list>
   </ion-content>
