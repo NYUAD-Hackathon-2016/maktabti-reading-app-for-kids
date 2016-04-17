@@ -56,7 +56,14 @@ angular.module('starter.controllers', [])
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
-.controller('AccountCtrl', function($scope) {
+
+.controller('CongratulateCtrl', function($scope) {
+  //console.log("CONGRATULATIONS");
+})
+
+
+
+.controller('AccountCtrl', function($scope, $state) {
   $scope.quiz = {
     answers: ['Rome','London', 'Paris'],
     correct: 'Rome',
@@ -64,20 +71,22 @@ angular.module('starter.controllers', [])
   }
   $scope.settings = {
     answer: '',
-    enableFriends: true
+      enableFriends: true
   };
   $scope.createTask = function() {
     if($scope.settings.answer == $scope.quiz.correct) {
-      window.alert("TRUE!");
+     $state.go('tab.congratulate');
+    } else {
+      $state.go('tab.fail');
     }
-    else {
-      window.alert("FALSE!");
-    }
-  };
+  }; 
 }
 )
 
 
+
+.controller('FailCtrl', function($scope) {
+})
 .controller('StatsCtrl', function($scope) {
   $scope.numberReadBooks = 10;
 })

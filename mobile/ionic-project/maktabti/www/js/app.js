@@ -50,6 +50,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
+ // .state('tab.fail', {
+   // url: '/fail',
+   // views: {
+     // 'tab-fail': {
+       // templateUrl: 'templates/tab-fail.html',
+        //controller: 'FailCtrl'
+      //}
+    //}
+  //})
+
   .state('tab.chats', {
       url: '/chats',
       views: {
@@ -68,7 +78,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
-
+    
   .state('tab.account', {
     url: '/account',
     views: {
@@ -79,6 +89,28 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
   
+    .state('tab.congratulate', {
+      url: '/congratulate',
+      views: {
+        'tab-account': {
+          templateUrl: 'templates/tab-congratulate.html',
+          controller: 'CongratulateCtrl'
+        }
+      }
+    })
+    
+    .state('tab.fail', {
+      url: '/fail',
+      views: {
+        'tab-account': {
+          templateUrl: 'templates/tab-fail.html',
+          controller: 'FailCtrl'
+        }
+      }
+    })
+    
+    
+
   .state('tab.reading', {
     url: '/reading',
     views: {

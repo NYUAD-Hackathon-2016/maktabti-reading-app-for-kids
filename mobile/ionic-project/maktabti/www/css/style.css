@@ -54,6 +54,23 @@
 }
 .ans {
     display: block;
-    height: 100px;
-    width: 100px;
+    height: 250px;
+    width: 250px;
+}
+.input-label{
+    font-family: serif;
+    font-size: 25px;
+}
+.answe {
+    font-size: 50px;
+}
+#mbrook {
+   
+    font-size: 80px;
+    padding: 100px;
+ 
+   
+}
+.back {
+    background-color: darkgoldenrod;
 }
