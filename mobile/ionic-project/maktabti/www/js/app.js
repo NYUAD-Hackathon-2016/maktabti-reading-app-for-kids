@@ -80,16 +80,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     }
   })
   
-  .state('tab.reading', {
-    url: '/reading',
-    views: {
-      'tab-reading': {
-        templateUrl: 'templates/tab-reading.html',
-        controller: 'ReadingCtrl'
-      }
-    }
-  })
-  
   
   //____________________My state_____________Lamia_______
 

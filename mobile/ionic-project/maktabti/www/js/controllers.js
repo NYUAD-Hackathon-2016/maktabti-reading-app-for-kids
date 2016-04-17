@@ -125,12 +125,6 @@ angular.module('starter.controllers', [])
   $scope.numberReadBooks = 10;
 })
 
-.controller('ReadingCtrl', function($scope) {
-  // populate a new variable with the content for this story?
-  $scope.story = story;
-  console.log($scope.story);
-});
-
 
  // $scope.createTask = function(radio_value) {
    // console.log("Submitting");
