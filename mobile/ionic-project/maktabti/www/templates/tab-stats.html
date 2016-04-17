@@ -1,16 +1,17 @@
-<ion-view view-title="Stats" classe="stats-view">
-    <ion-content>
-        <div class="col">
-            <div id="tab-stats-div-1" class="row row-33 row-offset-33">This month, I read </div>
-            <div id="tab-stats-div-2" class="row">{{numberReadBooks}}</div>
-            <div id="tab-stats-div-3" class="row">books!</div>
+<ion-view view-title="إحصائيات" classe="stats-view">
+    <ion-content dir="rtl">
+       <center> <div class="col">
+            <h2><div style="line-height:10px" id="tab-stats-div-1" class="row row-33 row-offset-33">الشهر الماضي قرأت:</div></h2>
+            <div style="line-height:40px" id="tab-stats-div-yellow" class="row"> {{numberReadWords}} كلمة</div>
+            <div style="line-height:50px" id="tab-stats-div-green" class="row"> {{numberReadBooks}} قصص</div>
+            <div style="line-height:50px" id="tab-stats-div-red" class="row"> {{numberDays}} يوم على التوالي</div>
+            <!--<div ngStyle="line-height:40px padding-top:50px" id="tab-stats-div-2" class="row"> قصص {{numberReadBooks}}</div>-->
+        </div> </center>
+         <div class="col">
+            <center> <img class src="img/linegraph.png"></center>
         </div>
-         <!--<div class="col">
-             <img src="img/linegraph.png">
-        </div>-->
     </ion-content>
 </ion-view>
-
 
 <!--
         <ion-list>

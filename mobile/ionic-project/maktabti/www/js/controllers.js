@@ -123,7 +123,9 @@ angular.module('starter.controllers', [])
 })
 
 .controller('StatsCtrl', function($scope) {
-  $scope.numberReadBooks = 10;
+  $scope.numberReadBooks = 9;
+  $scope.numberReadWords = 451;
+  $scope.numberDays = 24;
 })
 
 
