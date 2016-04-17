@@ -7,8 +7,8 @@
 </label>-->
  
 <ion-radio ng-repeat="question in quiz.answers" ng-model="settings.answer" ng-value="question">
-  {{question}}
-  <img class="ans" ng-src="http://bing.com/th?q={{question}}"/>
+ <div  class="answer-text"> {{question}} </div>
+  <img   class="ans" ng-src="http://bing.com/th?q={{question}}"/>
 </ion-radio>
 <br />
 

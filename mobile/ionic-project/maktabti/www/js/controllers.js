@@ -128,6 +128,10 @@ angular.module('starter.controllers', [])
   $scope.numberDays = 24;
 })
 
+.controller('SplashCtrl', function($scope) {
+ 
+})
+
 
  // $scope.createTask = function(radio_value) {
    // console.log("Submitting");

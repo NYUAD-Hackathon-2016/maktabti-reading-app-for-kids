@@ -80,6 +80,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     }
   })
   
+  .state('tab.splash', {
+    url: '/splash',
+    views: {
+      'tab-splash': {
+        templateUrl: 'templates/tab-splash.html',
+        controller: 'SplashCtrl'
+      }
+    }
+  })
+  
+  
   
   //____________________My state_____________Lamia_______
 

@@ -60,10 +60,21 @@
 
 .button-categ {
     width: 45%;
-    height: 180px;
+    height: 220px;
     margin: 2%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
+.category-title {
+    font-size: 200%;
+}
+.button-text {
+    font-size: 150%;
+}
+
+.answer-text {
+    font-size: 200%;
+    color: #000000
 }
 
 .categimg{
@@ -99,6 +110,13 @@
     margin-bottom: 20px;
     margin-top: 20px;
 }
+
+.splashImg {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
 .storyImageWrapper {
     position: relative;
 }
@@ -108,13 +126,13 @@
     left: 0;
     right: 0;
     text-align: center;
-    font-size: 50px;
-    padding-top: 30px;
-    padding-bottom: 50px;
+    font-size: 65px;
+    padding-top: 15px;
+    padding-bottom: 100px;
     color: white;
     background-image:
         linear-gradient( to top, transparent , rgba(0,0,0,0.5) 50%);
-    line-height: 40px; 
+    line-height: 80px; 
 }
 .grad-bg{
     background-image: linear-gradient( white,  #e6f7ff);

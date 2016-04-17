@@ -5,6 +5,10 @@ navigation history that also transitions its views in and out.
 -->
 <ion-tabs class="tabs-icon-top tabs-color-active-positive">
 
+  <!-- Splash Tab -->
+  <ion-tab title="Splash" icon-off="ion-home" icon-on="ion-home" href="#/tab/splash">
+    <ion-nav-view name="tab-splash"></ion-nav-view>
+  </ion-tab>
 
   <!-- Chats (categories) Tab -->
   <ion-tab title="مواضيع" icon-off="ion-ios-keypad-outline" icon-on="ion-ios-keypad" href="#/tab/chats">
@@ -25,5 +29,7 @@ navigation history that also transitions its views in and out.
   <ion-tab title="إحصائيات" icon-off="ion-ios-pie-outline" icon-on="ion-ios-pie" href="#/tab/stats">
     <ion-nav-view name="tab-stats"></ion-nav-view>
   </ion-tab>
+  
+ 
   
 </ion-tabs>
