@@ -20,24 +20,20 @@
 </style>
 
   <ion-content>
-  <!--
-      <ion-list>
-      <ion-item ng-repeat="story in stories">
-      <h1>story title {{story.id}}</h1>
-          <img ng-src="{{story.face}}">
-              <h2>{{story.name}}</h2>
-              <p>{{story.lastText}}</p>
-              <i class="icon ion-chevron-right icon-accessory"></i>
-     </ion-item>
-   </ion-list>
-   -->   
-         <!-- <img ng-src="{{story.background}}">-->
          <div class="storyImage" back-img="{{story.background}}" ng-scope="story" > </div>
-         <p>HELLO</p><p>HELLO</p><p>HELLO</p><p>HELLO</p><p>HELLO</p><p>HELLO</p><p>HELLO</p><p>HELLO</p><p>HELLO</p>
-         <script src="http://code.jquery.com/jquery-latest.js"></script>
-
-        <h2><center>{{story.title}}</center></h2>
-        <p>{{story.lastText}}</p>
+       <div ng-repeat="con in story.content" ng-model="story.content" ng-value="con">
+        <div ng-if="con.type == 'image'">
+       
+            <img class="storyImg" ng-src= {{con.data}}>
+        </div>
+        <div ng-if="con.type == 'video'">
+            <!--figure out the youtube data-->
+            <iframe width="560" height="315" src={{con.data}} frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div ng-if="con.type == 'text'">
+             <h1>{{con.data}}</h1>
+        </div>
+        </div>
 
   </ion-content>
   

@@ -1,5 +1,7 @@
 var story;
 
+var numStories = 3;
+
 angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope, $http) {
@@ -38,17 +40,17 @@ angular.module('starter.controllers', [])
     
     $scope.nextStory = function() {
     currentStory++;
-    // if (currentStory >= stories.length){
-    //     currentStory--;
-    // }
+    if (currentStory > numStories) {
+        currentStory = 1;
+    }
     var story = getStory();
   };
 
   $scope.previousStory = function() {
     currentStory--;
-    // if (currentStory == -1){
-    //     currentStory++;
-    // }
+    if (currentStory == -1){
+        currentStory = numStories;
+    }
     var story = getStory();
   };
 })
@@ -122,12 +124,6 @@ angular.module('starter.controllers', [])
 .controller('StatsCtrl', function($scope) {
   $scope.numberReadBooks = 10;
 })
-
-.controller('ReadingCtrl', function($scope) {
-  // populate a new variable with the content for this story?
-  $scope.story = story;
-  console.log($scope.story);
-});
 
 
  // $scope.createTask = function(radio_value) {

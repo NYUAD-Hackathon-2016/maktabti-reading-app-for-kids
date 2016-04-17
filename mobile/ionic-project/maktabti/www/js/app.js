@@ -23,7 +23,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, $sceProvider) {
+  $sceProvider.enabled(false);
 
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
@@ -75,16 +76,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       'tab-account': {
         templateUrl: 'templates/tab-account.html',
         controller: 'AccountCtrl'
-      }
-    }
-  })
-  
-  .state('tab.reading', {
-    url: '/reading',
-    views: {
-      'tab-reading': {
-        templateUrl: 'templates/tab-reading.html',
-        controller: 'ReadingCtrl'
       }
     }
   })
