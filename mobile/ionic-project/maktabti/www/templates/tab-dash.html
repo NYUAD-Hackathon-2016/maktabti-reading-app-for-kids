@@ -1,43 +1,40 @@
 <ion-view view-title="{{story.title}}">
-   
-                <!-- right and left buttons -->
 
-  
-            <ion-nav-buttons side="left">
-                <button class="button" ng-click="previousStory()">
-                   <i class = "icon ion-arrow-left-c"></i>
-                </button>
-            </ion-nav-buttons>
-            <ion-nav-buttons side="right">
-                <button class="button" ng-click="nextStory()">
-                    <i class = "icon ion-arrow-right-c"></i>
-                </button>
-            </ion-nav-buttons>
+  <ion-nav-buttons side="left">
+    <button class="button" ng-click="previousStory()">
+      <i class = "icon ion-arrow-left-c"></i>
+    </button>
+  </ion-nav-buttons>
 
-
-            <style>
-
-</style>
+  <ion-nav-buttons side="right">
+    <button class="button" ng-click="nextStory()">
+      <i class = "icon ion-arrow-right-c"></i>
+    </button>
+  </ion-nav-buttons>
 
   <ion-content>
-         <div class="storyImage" back-img="{{story.background}}" ng-scope="story" > </div>
-       <div ng-repeat="con in story.content" ng-model="story.content" ng-value="con">
-        <div ng-if="con.type == 'image'">
-       
-            <img class="storyImg" ng-src= {{con.data}}>
-        </div>
-        <div ng-if="con.type == 'video'">
-            <!--figure out the youtube data-->
-            <iframe width="560" height="315" src={{con.data}} frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div ng-if="con.type == 'text'">
-             <h1>{{con.data}}</h1>
-        </div>
-        </div>
+
+    <div class="storyImageWrapper">
+      <div class="storyImage" back-img="{{story.background}}" ng-scope="story" > </div>
+      <div class="storyTitle">{{story.title}}</div>
+    </div>
+
+    <div ng-repeat="con in story.content" ng-model="story.content" ng-value="con">
+
+      <div ng-if="con.type == 'image'">
+        <img class="storyImg" ng-src= {{con.data}}>
+      </div>
+
+      <div ng-if="con.type == 'video'">
+        <!--figure out the youtube data-->
+        <iframe width="560" height="315" src={{con.data}} frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <div ng-if="con.type == 'text'">
+        <h1>{{con.data}}</h1>
+      </div>
+    </div>
 
   </ion-content>
-  
-
-
   
 </ion-view>
