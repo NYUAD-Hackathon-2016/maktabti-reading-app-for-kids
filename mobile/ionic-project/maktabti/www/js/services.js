@@ -46,7 +46,7 @@ angular.module('starter.services', [])
 
 
 // .factory('Stories', function() {
-  
+
   // var stories = [{
   //   id: 0,
   //   name: 'Ben Sparrow',
@@ -91,4 +91,4 @@ angular.module('starter.services', [])
 
   // })
 
-// ;
+;
