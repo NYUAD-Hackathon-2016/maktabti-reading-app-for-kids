@@ -72,11 +72,22 @@
     margin-bottom: 20px;
     margin-top: 20px;
 }
-
-.has-header {
-    top: 0;
+.storyImageWrapper {
+    position: relative;
 }
-
+.storyTitle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 50px;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    color: white;
+    background-image:
+        linear-gradient( to top, transparent , rgba(0,0,0,0.5) 50%); 
+}
 .grad-bg{
     background-image: linear-gradient( white,  #e6f7ff);
 }
