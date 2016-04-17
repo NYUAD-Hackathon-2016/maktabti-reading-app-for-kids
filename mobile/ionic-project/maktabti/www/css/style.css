@@ -88,13 +88,15 @@
     padding-bottom: 50px;
     color: white;
     background-image:
-        linear-gradient( to top, transparent , rgba(0,0,0,0.5) 50%); 
+        linear-gradient( to top, transparent , rgba(0,0,0,0.5) 50%);
+    line-height: 40px; 
 }
 .grad-bg{
     background-image: linear-gradient( white,  #e6f7ff);
 }
 
 .storyText {
+    padding: 20px;
     font-family: 'Amiri', serif;
     font-size: 34px;
     line-height: 40px;
