@@ -2,13 +2,15 @@
     <ion-content>
        <div ng-repeat="con in story.content" ng-model="story.content" ng-value="con">
         <div ng-if="con.type == 'image'">
-            <img ng-src= {{con.data}}>
+       
+            <img class="storyImg" ng-src= {{con.data}}>
         </div>
         <div ng-if="con.type == 'video'">
             <!--figure out the youtube data-->
+            <iframe width="560" height="315" src={{con.data}} frameborder="0" allowfullscreen></iframe>
         </div>
         <div ng-if="con.type == 'text'">
-             {{con.data}}
+             <h1>{{con.data}}</h1>
         </div>
         </div>
     </ion-content>
